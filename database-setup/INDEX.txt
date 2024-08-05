@@ -1,0 +1,15 @@
+MariaDB [hospitalewha]> create index 환자ID_진료 on 진료(환자ID) ;
+Query OK, 0 rows affected (0.025 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [hospitalewha]> create index 진료날짜_진료 on 진료(진료날짜);
+Query OK, 0 rows affected (0.013 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [hospitalewha]> create index 진료ID_차트 on 차트(진료ID);
+Query OK, 0 rows affected (0.013 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [hospitalewha]> create index 환자성명_환자 on 환자(성명);
+Query OK, 0 rows affected (0.013 sec)
+Records: 0  Duplicates: 0  Warnings: 0
