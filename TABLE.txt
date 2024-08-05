@@ -1,0 +1,77 @@
+<의사 table 생성문>
+
+create table 의사 (
+     의사ID char(5),
+    담당진료과목 char(5),
+    성명 char(5),
+    성별 char(5),
+    연락처 char(15),
+    이메일 char(50),
+    직급 char(5),
+    primary key(의사ID) );
+
+
+<간호사 table 생성문 >
+	
+create table 간호사(
+    간호사ID char(5),
+    담당진료과목 char(5),
+    성명 char(5),
+    성별 char(5),
+    연락처 char(15),
+    이메일 char(50),
+    직급 char(5),
+    primary key(간호사ID) );
+
+
+<간호사 table 생성문 >
+
+create table 환자(
+    환자ID char(5),
+    성명 char(5),
+    성별 char(5),
+    직업 char(10),
+    담당의사ID char(5),
+    담당간호사ID char(5),
+    주민번호 char(15),
+    보호자연락처 char(15),
+    시 char(5),
+    구 char(5),
+    연락처 char(15),
+    이메일 char(50),
+    primary key(환자ID), 
+    foreign key(담당의사ID) references 의사(의사ID), 
+    foreign key(담당간호사ID) references 간호사(간호사ID) ); 
+
+
+<특이체질 table 생성문 >
+
+create table 특이체질(
+    환자ID char(5),
+    특이체질 char(20),
+    primary key(환자ID),
+    foreign key(환자ID) references 환자(환자ID) );
+
+
+<진료 table 생성문 >
+
+create table 진료(
+    진료ID char(10),
+    진료날짜 int(10),
+    환자ID char(5),
+    진료내용 char(30),
+    접수간호사ID char(5), 
+    primary key(진료ID),
+    foreign key(환자ID) references 환자(환자ID),
+    foreign key(접수간호사ID) references 간호사(간호사ID) );
+
+
+<차트 table 생성문 >
+
+create table 차트(
+    차트ID char(5),
+    진료ID char(10),
+    의사소견 char(50),
+    재진여부 char(5),
+    primary key(차트ID),
+    foreign key(진료ID) references 진료(진료ID) );
