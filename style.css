@@ -1,0 +1,45 @@
+ @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 헤더 */
+.header{
+	padding: 20px;
+	text-align: center;
+	background-image: url('background.jpg');
+}
+.title {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/* 네비게이션바 */
+.topnav{
+	overflow: hidden;
+	background-color: #363c5f;
+}
+.topnav a{
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+/* 검색결과 출력창 */
+.result{
+	text-align: center;
+	background-color: white;
+}
+
+table{
+	width:95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+table, th, td{
+	border: 1px solid black;
+}
